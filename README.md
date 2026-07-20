@@ -1,0 +1,2 @@
+# spec-conformance-workflow
+ドキュメントと実装の差異を発見し修正するClaudeのWorkflowから得た知見を書き出したファイル群
