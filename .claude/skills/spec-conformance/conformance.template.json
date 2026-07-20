@@ -1,0 +1,29 @@
+{
+  "specGlobs": ["doc/**/*.md"],
+  "specPriority": "複数の正典がある場合の優先順位を散文で。例: OpenAPI スキーマ > 設計書の散文 > README",
+  "roadmapFile": "tmp/conformance-roadmap.md",
+
+  "coreContracts": [
+    "壊れたら実装をやり直す性質を、1行ずつ散文で列挙する",
+    "例: 同一入力・同一シードでの再現性（状態ハッシュ一致・リプレイ一致）",
+    "例: 永続形式の後方互換性（既存の保存データを読めなくしない）",
+    "例: 会計恒等式・保存則などのドメイン不変条件",
+    "例: 認可境界（あるユーザーが他ユーザーのデータへ到達しない）",
+    "例: 性能予算（p95 レイテンシ、1リクエストあたりのクエリ本数）"
+  ],
+  "crossCuttingWiring": "新しいフィールド・状態・列挙値を追加したときに必ず通すべき横断経路をプロジェクト固有に書く。例: 永続化の保存と読み戻し、スキーマ検証、移行スクリプト、型定義、クライアント側の表示",
+
+  "testCommand": "<個別テスト1ファイルを実行するコマンド。{file} がファイル名に置換される。実際に走らせて確認してから書く>",
+  "fullSuiteCommand": "<フルスイートを実行するコマンド。実際に走らせて確認してから書く>",
+  "heavyTests": ["長時間・高負荷でフルスイートから分離して回すテストの識別子"],
+  "invariantChecks": [
+    "coreContracts を機械的に検証するコマンドを列挙する。空にしないこと"
+  ],
+
+  "hygieneRoots": ["src", "tests", "doc"],
+  "hygienePatterns": [],
+  "scratchDirs": ["tmp", "scratch", "notes"],
+  "banBareHashNumbers": false,
+
+  "commitStyleSkill": "commit"
+}
